@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krigagem em mapas de fertilidade: o método que vira amostra em decisão — Blog Oscarpes</title>
+  <meta name="description" content="Krigagem em mapas de fertilidade: o que é, como funciona, diferença para IDW e por que é o padrão da agricultura de precisão. Guia técnico Oscarpes.">
+  <meta name="keywords" content="krigagem mapas de fertilidade, agricultura inteligente, Oscarpes, Tapurah MT, atendimento em todo o Brasil">
+  <meta property="og:title" content="Krigagem em mapas de fertilidade: o método que vira amostra em decisão">
+  <meta property="og:description" content="Krigagem em mapas de fertilidade: o que é, como funciona, diferença para IDW e por que é o padrão da agricultura de precisão. Guia técnico Oscarpes.">
+  <meta property="og:image" content="https://www.oscarpes.com.br/img/oscarpes-logo.png">
+  <meta property="og:url" content="https://www.oscarpes.com.br/artigo-5.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="article:published_time" content="2026-06-02">
+  <meta property="article:author" content="Lab Oscarpes">
+  <link rel="canonical" href="https://www.oscarpes.com.br/artigo-5.html">
+  <link rel="icon" type="image/png" href="img/oscarpes-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/blog.css">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Krigagem em mapas de fertilidade: o método que vira amostra em decisão",
+  "description": "Krigagem em mapas de fertilidade: o que é, como funciona, diferença para IDW e por que é o padrão da agricultura de precisão. Guia técnico Oscarpes.",
+  "datePublished": "2026-06-02",
+  "author": {
+    "@type": "Organization",
+    "name": "Lab Oscarpes"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Oscarpes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.oscarpes.com.br/img/oscarpes-logo.png"
+    }
+  },
+  "image": "https://www.oscarpes.com.br/img/oscarpes-logo.png",
+  "mainEntityOfPage": "https://www.oscarpes.com.br/artigo-5.html"
+}
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="brand"><img src="img/oscarpes-logo.png" alt="Logo Oscarpes"><span class="brand-text"><strong>OSCARPES</strong><small>Agricultura Inteligente</small></span></a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="analise-solo.html">Análise de Solo</a></li>
+        <li><a href="consultoria.html">Consultoria</a></li>
+        <li><a href="adubos.html">Adubos</a></li>
+        <li><a href="app.html">App</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html" class="cta-nav">Solicitar Análise</a></li>
+        <li><a href="https://app.oscarpes.com.br" class="cta-nav cta-nav-app">Entrar no App</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <article class="article-page">
+    <header class="article-banner">
+      <div class="container">
+        <a href="blog.html" class="article-back">← Voltar ao blog</a>
+        <div class="article-meta">
+          <span class="article-tag">📚 Conhecimento técnico</span>
+          <span class="article-meta-item">📅 2026-06-02</span>
+          <span class="article-meta-item">⏱ ~12 min</span>
+        </div>
+        <h1 class="article-title">Krigagem em mapas de fertilidade: o método que vira amostra em decisão</h1>
+        <p class="article-lead">Krigagem em mapas de fertilidade: o que é, como funciona, diferença para IDW e por que é o padrão da agricultura de precisão. Guia técnico Oscarpes.</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="article-body">
+        
+<p class="article-p">Quando o produtor recebe os pontos georreferenciados de uma análise de solo em grid, ele tem uma planilha cheia de coordenadas e valores. O que ele precisa, na prática, é de um <strong>mapa colorido</strong> que mostre onde o talhão está deficiente, onde está com excesso, e que possa ser carregado direto no monitor do trator para aplicação a taxa variável. Esse salto de "planilha de pontos" para "mapa contínuo" é feito por uma técnica geoestatística chamada <strong>krigagem</strong>. Saber o que é <strong>krigagem em mapas de fertilidade</strong> é entender o motor matemático que está por trás de toda a agricultura de precisão moderna.</p>
+<p class="article-p">Este guia foi escrito para o produtor de alta tecnologia, o agrônomo e o técnico de precisão que querem entender — sem precisar virar matemático — como amostras pontuais viram mapa contínuo, qual a diferença entre krigagem e métodos mais simples como IDW, e como escolher o tipo certo para cada talhão. Ao final, você vai ter o vocabulário e o critério necessário para conversar de igual com qualquer fornecedor de mapas de fertilidade.</p>
+<p class="article-p">Este é o quinto artigo da série Oscarpes sobre análise de solo. Os anteriores cobriram <a href="artigo-1.html">como fazer análise de solo</a>, <a href="artigo-2.html">a melhor época pra coletar</a>, <a href="artigo-3.html">interpretação do laudo</a> e <a href="artigo-4.html">a diferença entre macro e micronutrientes</a>. A krigagem é o passo que conecta tudo isso ao trator.</p>
+<h2 id="por-que-precisamos-de-interpolacao-espacial">Por que precisamos de interpolação espacial</h2>
+<p class="article-p">Imagine um talhão de 100 hectares com 50 pontos amostrados em grid. Cada ponto traz um valor de P, K, V%, MO, etc. Mas o talhão tem milhões de pontos possíveis — e o trator vai aplicar adubo em <strong>todo</strong> o talhão, não só nos 50 pontos amostrados. Como saber o valor de P numa coordenada qualquer entre os pontos?</p>
+<p class="article-p">A resposta é <strong>interpolação espacial</strong>: a partir dos valores conhecidos nos pontos amostrados, estimar os valores em todos os outros pontos do talhão. Existem várias técnicas:</p>
+<ul class="article-list">
+<li><strong>Polígonos de Thiessen (vizinho mais próximo)</strong>: cada região recebe o valor do ponto mais próximo. Mapa fica em "blocos" duros.</li>
+<li><strong>IDW (Inverse Distance Weighting)</strong>: média ponderada pelo inverso da distância. Pontos mais próximos pesam mais.</li>
+<li><strong>Krigagem</strong>: interpolação geoestatística que usa a estrutura espacial dos dados (variograma) para estimar valores e ainda dá uma medida de <strong>incerteza</strong> ponto a ponto.</li>
+</ul>
+<p class="article-p">A krigagem é considerada o padrão técnico para mapas de fertilidade porque é o único método que respeita a <strong>estrutura espacial real</strong> do dado e quantifica o erro da estimativa.</p>
+<h2 id="o-que-e-krigagem-de-forma-simples">O que é krigagem (de forma simples)</h2>
+<p class="article-p">A krigagem foi desenvolvida pelo engenheiro de minas sul-africano Danie Krige nos anos 1950, originalmente para estimar reservas de ouro. A teoria foi formalizada por Georges Matheron na França nos anos 1960. Daí vem o nome.</p>
+<p class="article-p">A ideia central:</p>
+<ol class="article-list">
+<li>Antes de interpolar, <strong>medir como os valores variam no espaço</strong>: dois pontos próximos tendem a ter valores parecidos? Pontos a 100 m de distância são mais parecidos que pontos a 500 m? A função que descreve isso é o <strong>semivariograma</strong>.</li>
+<li>Com o semivariograma ajustado, a krigagem calcula, para cada ponto não amostrado, <strong>uma média ponderada</strong> dos pontos amostrados — só que os pesos não vêm da distância simples (como no IDW), mas da estrutura de variabilidade real do dado.</li>
+<li>Como resultado, a krigagem entrega: o <strong>valor estimado</strong> + a <strong>variância da estimativa</strong> (mapa de erro). O IDW só entrega o valor.</li>
+</ol>
+<p class="article-p">Na prática, o agrônomo não precisa fazer a matemática à mão — softwares como Vesper, ArcGIS, QGIS, R (pacote gstat), GS+ fazem o cálculo. O importante é entender que:</p>
+<ul class="article-list">
+<li><strong>Krigagem requer dado espacialmente estruturado</strong> (alguns pontos pertinho de outros para conseguir ajustar o variograma).</li>
+<li><strong>Krigagem só faz sentido com densidade mínima</strong> — algo como 1 amostra a cada 1-3 ha em grid bem distribuído.</li>
+<li><strong>Krigagem dá mapa "suave"</strong> (gradientes naturais), enquanto IDW pode criar artefatos em "olho de boi" em torno de pontos.</li>
+</ul>
+<h2 id="krigagem-vs-idw-qual-usar-quando">Krigagem vs IDW: qual usar quando?</h2>
+<p class="article-p">Comparação prática para o produtor:</p>
+<table>
+<thead>
+<tr>
+<th>Critério</th>
+<th>IDW</th>
+<th>Krigagem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Complexidade</td>
+<td>Baixa</td>
+<td>Média/Alta</td>
+</tr>
+<tr>
+<td>Densidade mínima recomendada</td>
+<td>Funciona com poucos pontos</td>
+<td>Idealmente &gt; 30-50 pontos</td>
+</tr>
+<tr>
+<td>Mapa de incerteza</td>
+<td>Não fornece</td>
+<td>Fornece (variância)</td>
+</tr>
+<tr>
+<td>Respeita estrutura espacial</td>
+<td>Não</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Tendência a "olho de boi"</td>
+<td>Sim, em densidade baixa</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Tempo de processamento</td>
+<td>Rápido</td>
+<td>Mais lento</td>
+</tr>
+<tr>
+<td>Recomendação</td>
+<td>Talhões pequenos ou amostra esparsa</td>
+<td>Padrão para agricultura de precisão</td>
+</tr>
+</tbody>
+</table>
+<p class="article-p">Para grids de 1-3 ha em talhões médios e grandes, <strong>a krigagem é o padrão técnico</strong>. Para grids esparsos (5-10 ha) ou diagnóstico inicial, IDW pode ser suficiente.</p>
+<h2 id="o-semivariograma-o-coracao-da-krigagem">O semivariograma: o coração da krigagem</h2>
+<p class="article-p">O semivariograma é o gráfico que mostra como a <strong>diferença média entre pares de pontos cresce com a distância</strong>. Três parâmetros principais:</p>
+<ul class="article-list">
+<li><strong>Efeito pepita (nugget)</strong>: variabilidade em distâncias muito curtas (erro de medição + variabilidade microescala). Idealmente baixo.</li>
+<li><strong>Patamar (sill)</strong>: o valor onde a variabilidade estabiliza. Representa a variância total do dado.</li>
+<li><strong>Alcance (range)</strong>: a distância a partir da qual os pontos não se relacionam mais espacialmente. Acima do alcance, a krigagem é tão precisa quanto a média global.</li>
+</ul>
+<p class="article-p">Para o produtor, o que importa entender:</p>
+<ul class="article-list">
+<li><strong>Alcance baixo (ex: 50 m)</strong> → talhão muito heterogêneo, exige amostragem densa. Variabilidade espacial é fina.</li>
+<li><strong>Alcance alto (ex: 300 m)</strong> → talhão homogêneo, amostragem mais esparsa funciona.</li>
+<li><strong>Pepita alta</strong> → muito ruído na medição. Reveja método de coleta, profundidade, identificação.</li>
+</ul>
+<p class="article-p">Modelos típicos ajustados ao variograma: esférico, exponencial, gaussiano. O agrônomo de precisão escolhe o que melhor se ajusta aos dados.</p>
+<h2 id="como-o-produtor-usa-o-mapa-de-krigagem-na-pratica">Como o produtor usa o mapa de krigagem na prática</h2>
+<p class="article-p">O fluxo padrão do mapa de fertilidade na agricultura de precisão:</p>
+<ol class="article-list">
+<li><strong>Coleta georreferenciada</strong> em grid (ex: 50 pontos em talhão de 100 ha, grid 2 ha).</li>
+<li><strong>Análise de solo no laboratório</strong>: cada ponto vira um conjunto de valores (pH, MO, P, K, V%, etc.).</li>
+<li><strong>Geração do mapa por krigagem</strong> para cada parâmetro de interesse.</li>
+<li><strong>Sobreposição de mapas</strong> (ex: mapa de V% × mapa de produtividade da safra anterior) para zoneamento.</li>
+<li><strong>Geração de mapa de prescrição</strong> (taxa variável) — quanto calcário aplicar em cada zona.</li>
+<li><strong>Carregamento no monitor do trator</strong> (formato shapefile, ISOXML ou similar).</li>
+<li><strong>Aplicação a taxa variável</strong> no campo.</li>
+<li><strong>Verificação na safra seguinte</strong>: o mapa de produtividade está mais homogêneo?</li>
+</ol>
+<p class="article-p">Esse fluxo, bem-feito, reduz custo de calcário e fertilizante em <strong>10 a 25%</strong> (variável conforme heterogeneidade do talhão), com produtividade igual ou maior. É o ROI clássico da agricultura de precisão.</p>
+<h2 id="quais-parametros-vale-mapear-por-krigagem">Quais parâmetros vale mapear por krigagem</h2>
+<p class="article-p">Nem todo parâmetro precisa de mapa. Os de maior retorno econômico:</p>
+<ul class="article-list">
+<li><strong>V% (saturação por bases)</strong> → guia para taxa variável de calcário.</li>
+<li><strong>P-Mehlich ou P-Resina</strong> → adubação corretiva e de manutenção de fósforo.</li>
+<li><strong>K trocável</strong> → adubação de potássio (especialmente em solo arenoso).</li>
+<li><strong>MO (matéria orgânica)</strong> → indicador de zoneamento e de potencial produtivo.</li>
+<li><strong>Argila / textura</strong> → base para definir zonas de manejo permanentes.</li>
+<li><strong>Produtividade histórica</strong> (do monitor de colheita) → camada extra para zoneamento.</li>
+</ul>
+<p class="article-p">Em um talhão maduro de agricultura de precisão, o produtor cruza essas camadas e gera <strong>zonas de manejo permanentes</strong> — áreas do talhão com características semelhantes que podem ser tratadas como sub-unidades.</p>
+<h2 id="densidade-de-amostragem-o-trade-off-economico">Densidade de amostragem: o trade-off econômico</h2>
+<p class="article-p">A grande pergunta prática: quantos pontos por hectare?</p>
+<p class="article-p">Recomendações que circulam no mercado brasileiro:</p>
+<table>
+<thead>
+<tr>
+<th>Nível de gerenciamento</th>
+<th>Grid recomendado</th>
+<th>Pontos por 100 ha</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diagnóstico inicial / talhão homogêneo</td>
+<td>5 ha</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Manejo de média intensidade</td>
+<td>3 ha</td>
+<td>33</td>
+</tr>
+<tr>
+<td>Alta produtividade / taxa variável robusta</td>
+<td>2 ha</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Pesquisa / talhão muito heterogêneo</td>
+<td>1 ha</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Zonas de calibração</td>
+<td>0,5 ha</td>
+<td>200</td>
+</tr>
+</tbody>
+</table>
+<p class="article-p">A Oscarpes oferece grids de 0,5, 1, 2, 3 e 5 ha conforme o nível de gerenciamento desejado pelo cliente. A maioria dos produtores de soja em MT que entram em taxa variável começa em <strong>3 ha</strong> e migra para <strong>2 ha</strong> quando ganham confiança no método.</p>
+<p class="article-p"><strong>Regra prática</strong>: quanto mais heterogêneo o talhão (variações de cor de solo, de cota, de produtividade histórica), mais densa precisa ser a amostragem para a krigagem fazer sentido.</p>
+<h2 id="onde-a-krigagem-falha-e-o-que-fazer">Onde a krigagem falha (e o que fazer)</h2>
+<p class="article-p">Krigagem não é mágica. Falha em situações como:</p>
+<ul class="article-list">
+<li><strong>Densidade insuficiente</strong> (poucos pontos): variograma não fica estatisticamente robusto. Solução: aumentar densidade ou usar IDW.</li>
+<li><strong>Heterogeneidade extrema</strong>: dois talhões fundidos em um só (ex: parte de baixada com parte de chapadão). Solução: estratificar antes da krigagem por zonas distintas.</li>
+<li><strong>Tendência linear forte</strong>: por exemplo, V% que aumenta linearmente do norte para o sul do talhão. Solução: usar <strong>krigagem universal</strong> (que modela a tendência) em vez de krigagem ordinária.</li>
+<li><strong>Outliers</strong>: amostra contaminada (cova de adubo, formigueiro). Solução: filtrar antes da krigagem.</li>
+<li><strong>Pontos só na borda</strong> ou só no centro: extrapolação ruim. Solução: garantir distribuição espacial uniforme — papel do app de coleta.</li>
+</ul>
+<p class="article-p">O app Oscarpes ajuda na origem desse problema: gera grid uniforme com offsets diferentes, faz buffer de bordadura proporcional e permite arrastar pontos para reposicionar quando o ponto cai num lugar ruim.</p>
+<h2 id="krigagem-ordinaria-simples-universal-variantes">Krigagem ordinária, simples, universal: variantes</h2>
+<p class="article-p">Para o produtor avançado:</p>
+<ul class="article-list">
+<li><strong>Krigagem simples</strong>: assume média conhecida. Pouco usada em agricultura.</li>
+<li><strong>Krigagem ordinária</strong>: assume média desconhecida mas constante. <strong>Padrão em mapas de fertilidade.</strong></li>
+<li><strong>Krigagem universal</strong>: incorpora tendência (drift). Usada quando há gradiente claro.</li>
+<li><strong>Co-krigagem</strong>: usa duas variáveis correlacionadas (ex: P + condutividade elétrica). Mais densidade, mais informação.</li>
+<li><strong>Krigagem indicadora</strong>: para variáveis categóricas (ex: classe de fertilidade). Usada em zoneamento.</li>
+</ul>
+<p class="article-p">A maioria dos casos comerciais resolve-se com <strong>krigagem ordinária + variograma esférico ou exponencial</strong>. Detalhe técnico que o agrônomo de precisão dominará, e o produtor não precisa decorar.</p>
+<h2 id="como-a-oscarpes-integra-krigagem-ao-servico">Como a Oscarpes integra krigagem ao serviço</h2>
+<p class="article-p">O serviço completo Oscarpes:</p>
+<ol class="article-list">
+<li><strong>Cadastro do talhão no app</strong> com polígono georreferenciado.</li>
+<li><strong>Geração de grid uniforme</strong> (0,5 a 5 ha) sobre o polígono.</li>
+<li><strong>Coleta no campo</strong> com 5 sub-amostras por ponto, código de barras por saquinho.</li>
+<li><strong>Análise no laboratório Oscarpes</strong> (pacote completo opcional, com micros).</li>
+<li><strong>Mapas de fertilidade por krigagem</strong> para os parâmetros relevantes.</li>
+<li><strong>Recomendação de taxa variável</strong> (calcário, P, K, micros).</li>
+<li><strong>Arquivo de prescrição</strong> pronto para o monitor do trator.</li>
+</ol>
+<p class="article-p">Tudo amarrado num fluxo só, com rastreabilidade total. Saiba mais em <a href="analise-solo.html">/analise-solo</a> e em <a href="consultoria.html">/consultoria</a>.</p>
+<h2 id="perguntas-frequentes">Perguntas frequentes</h2>
+<h3 id="krigagem-e-melhor-que-idw-sempre">Krigagem é melhor que IDW sempre?</h3>
+<p class="article-p">Não sempre. Em densidade alta e dado bem-estruturado, krigagem é superior. Em densidade baixa, IDW pode ser equivalente ou melhor (mais robusto a poucos pontos). A escolha depende do dado.</p>
+<h3 id="posso-fazer-krigagem-em-casa-sem-agronomo">Posso fazer krigagem em casa, sem agrônomo?</h3>
+<p class="article-p">Tecnicamente sim — softwares livres como QGIS + R (pacote gstat) fazem. Mas a interpretação do variograma e a escolha do modelo exigem conhecimento técnico. Se feita errada, gera mapa pior do que a média simples.</p>
+<h3 id="quantos-pontos-preciso-para-krigar">Quantos pontos preciso para krigar?</h3>
+<p class="article-p">Mínimo recomendado: 30 pontos. Idealmente 50 ou mais, distribuídos uniformemente.</p>
+<h3 id="o-mapa-de-krigagem-e-verdade-absoluta">O mapa de krigagem é "verdade absoluta"?</h3>
+<p class="article-p">Não. É a melhor estimativa estatística dada a amostra. Sempre vem com mapa de incerteza. Em zonas com pouca amostra, a incerteza é maior.</p>
+<h3 id="krigagem-serve-so-para-fertilidade">Krigagem serve só para fertilidade?</h3>
+<p class="article-p">Não. É usada para mapear qualquer variável espacial: produtividade, condutividade elétrica, NDVI, profundidade do lençol freático, contaminantes, etc.</p>
+<h2 id="conclusao">Conclusão</h2>
+<p class="article-p">Entender <strong>krigagem em mapas de fertilidade</strong> tira a agricultura de precisão da caixa-preta e a coloca no domínio do produtor. A técnica:</p>
+<ul class="article-list">
+<li>Transforma pontos amostrados em mapa contínuo.</li>
+<li>Respeita a estrutura espacial real do dado (via semivariograma).</li>
+<li>Quantifica a incerteza ponto a ponto.</li>
+<li>É o padrão técnico para mapas de fertilidade e taxa variável.</li>
+<li>Exige densidade mínima de amostragem (idealmente &gt; 30 pontos uniformemente distribuídos).</li>
+<li>Combinada com a coleta georreferenciada do app Oscarpes e com o laudo do laboratório, fecha o ciclo completo da agricultura inteligente.</li>
+</ul>
+<p class="article-p">A Oscarpes oferece esse pacote integrado — coleta, análise, krigagem, recomendação e arquivo de prescrição — para o produtor de Mato Grosso e do Centro-Oeste que quer levar a lavoura ao próximo nível de tecnologia. <strong>Solicite seu mapeamento de fertilidade pelo <a href="https://wa.me/5566999233434">WhatsApp Oscarpes</a></strong> e comece a próxima safra com o talhão mapeado de ponta a ponta.</p>
+<h2 id="sobre-a-oscarpes">Sobre a Oscarpes</h2>
+<p class="article-p">A Oscarpes é o laboratório agronômico do Grupo Oscarpes, em Tapurah/MT. Atuamos no ciclo completo da agricultura inteligente: app de coleta georreferenciada, análise química e física de solo, consultoria agronômica e linha própria de adubos especiais. Tecnologia, ciência e agronomia integradas para o produtor que busca alta produtividade. <a href="sobre.html">Conheça a Oscarpes</a>.</p>
+      </div>
+
+      <div class="article-cta">
+        <h3>Tá na hora da sua análise de solo?</h3>
+        <p>O Lab Oscarpes em Tapurah/MT entrega laudo completo em 5–10 dias úteis. Atendimento direto pelo agrônomo, sem revenda no meio.</p>
+        <div class="btn-row" style="justify-content: center;">
+          <a href="https://wa.me/5566999233434?text=Olá!%20Quero%20solicitar%20análise%20de%20solo." target="_blank" rel="noopener" class="btn btn-primary btn-large">Falar no WhatsApp</a>
+          <a href="contato.html" class="btn btn-secondary btn-large">Formulário do site</a>
+        </div>
+      </div>
+
+      <aside class="article-author">
+        <div class="article-author-avatar">JO</div>
+        <div>
+          <h4>Equipe Oscarpes</h4>
+          <small>Agrônomos do Lab Oscarpes em Tapurah/MT — análise de solo, consultoria e tecnologia agro.</small>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="brand"><img src="img/oscarpes-logo.png" alt="Logo Oscarpes"><span class="brand-text"><strong>OSCARPES</strong><small>Agricultura Inteligente</small></span></a><p>Laboratório agronômico do Grupo Oscarpes — análise de solo, consultoria, adubos e tecnologia.</p></div>
+        <div><h5>Soluções</h5><ul><li><a href="analise-solo.html">Análise de Solo</a></li><li><a href="consultoria.html">Consultoria</a></li><li><a href="adubos.html">Adubos Especiais</a></li><li><a href="app.html">App Oscarpes</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+        <div><h5>Empresa</h5><ul><li><a href="sobre.html">Sobre nós</a></li><li><a href="contato.html">Contato</a></li><li><a href="https://wa.me/5566999233434" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="termos.html">Termos de Uso</a></li><li><a href="privacidade.html">Privacidade</a></li></ul></div>
+        <div><h5>Contato</h5><ul><li>Tapurah — Mato Grosso</li><li><a href="mailto:joaocarpes@oscarpes.com.br">joaocarpes@oscarpes.com.br</a></li><li><a href="https://wa.me/5566999233434" target="_blank" rel="noopener">+55 (66) 99923-3434</a></li></ul><div class="social-links"><a href="https://instagram.com/oscarpes_agricultura" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a href="https://www.youtube.com/channel/UCAtOWKjYQIU1O_fXgjECWbw" target="_blank" rel="noopener" aria-label="YouTube">YT</a><a href="#" aria-label="LinkedIn">in</a></div></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Grupo Oscarpes • Todos os direitos reservados.</span><span>Feito com 🌱 em Tapurah/MT</span></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5566999233434?text=Olá!%20Vi%20o%20artigo%20sobre%20krigagem%20mapas%20de%20fertilidade%20no%20blog." class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
