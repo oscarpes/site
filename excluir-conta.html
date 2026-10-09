@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excluir conta — Oscarpes</title>
+  <meta name="description" content="Como excluir a sua conta do app Oscarpes e os seus dados. How to delete your Oscarpes account. Cómo eliminar tu cuenta de Oscarpes.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Excluir conta — Oscarpes">
+  <meta property="og:description" content="Como excluir a sua conta do app Oscarpes e os seus dados. How to delete your Oscarpes account. Cómo eliminar tu cuenta de Oscarpes.">
+  <meta property="og:image" content="https://www.oscarpes.com.br/img/oscarpes-logo.png">
+  <meta property="og:url" content="https://www.oscarpes.com.br/excluir-conta">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="canonical" href="https://www.oscarpes.com.br/excluir-conta">
+  <link rel="icon" type="image/png" href="img/oscarpes-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/blog.css">
+
+  <style>
+    /* Blocos exclusivos das páginas legais (Privacidade / Termos).
+       Reaproveitam a paleta da marca definida em css/style.css. */
+    .legal-resumo {
+      background: rgba(162, 167, 42, .12);
+      border: 1px solid rgba(162, 167, 42, .45);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.5rem;
+      margin: 0 0 2rem;
+    }
+    .legal-resumo h2 {
+      font-size: 1.1rem;
+      margin-bottom: .8rem;
+      color: var(--verde-medio);
+    }
+    .legal-resumo ul { padding-left: 1.2rem; margin: 0; }
+    .legal-resumo li { margin-bottom: .5rem; color: var(--cinza); }
+
+    .legal-aviso {
+      background: rgba(249, 163, 34, .12);
+      border: 1px solid rgba(249, 163, 34, .5);
+      border-left: 5px solid var(--laranja);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .legal-aviso h2, .legal-aviso h3 {
+      font-size: 1.05rem;
+      margin-bottom: .6rem;
+      color: var(--marrom);
+    }
+    .legal-aviso ul { padding-left: 1.2rem; margin: .6rem 0 0; }
+    .legal-aviso li { margin-bottom: .5rem; color: var(--cinza); }
+
+    /* Marca visível de dado que ainda não foi preenchido. Preferimos deixar
+       o buraco à vista a publicar informação inventada. */
+    .pendente {
+      display: inline-block;
+      background: rgba(249, 163, 34, .22);
+      border: 1px dashed var(--marrom);
+      border-radius: 6px;
+      padding: .05rem .45rem;
+      font-size: .92em;
+      font-weight: 600;
+      color: var(--marrom);
+      white-space: normal;
+    }
+
+    .legal-selo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem 1.4rem;
+      font-size: .92rem;
+      color: var(--cinza);
+      border-top: 1px solid rgba(60, 76, 3, .15);
+      border-bottom: 1px solid rgba(60, 76, 3, .15);
+      padding: .9rem 0;
+      margin-bottom: 2rem;
+    }
+    .legal-selo strong { color: var(--verde-escuro); }
+
+    /* Tabela rola dentro da própria caixa no celular, em vez de estourar a
+       página. Só a tabela de 4 colunas ganha largura mínima — as de 2 colunas
+       cabem sozinhas e não precisam rolar. */
+    .tabela-rola { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0; }
+    .tabela-rola table { margin: 0; }
+    .tabela-rola.larga table { min-width: 560px; }
+    .tabela-dica { display: none; font-size: .85rem; color: var(--marrom); margin: -1rem 0 1.5rem; }
+    @media (max-width: 700px) { .tabela-dica { display: block; } }
+
+    .legal-indice {
+      background: var(--branco);
+      border: 1px solid rgba(60, 76, 3, .15);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .legal-indice h2 { font-size: 1rem; margin-bottom: .7rem; color: var(--verde-medio); }
+    .legal-indice ol { padding-left: 1.3rem; margin: 0; columns: 2; column-gap: 2rem; }
+    .legal-indice li { margin-bottom: .35rem; font-size: .95rem; }
+    @media (max-width: 600px) {
+      .legal-indice ol { columns: 1; }
+      .legal-resumo, .legal-aviso, .legal-indice { padding: 1.1rem 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="brand"><img src="img/oscarpes-logo.png" alt="Logo Oscarpes"><span class="brand-text"><strong>OSCARPES</strong><small>Agricultura Inteligente</small></span></a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="analise-solo.html">Análise de Solo</a></li>
+        <li><a href="consultoria.html">Consultoria</a></li>
+        <li><a href="adubos.html">Adubos</a></li>
+        <li><a href="app.html">App</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html" class="cta-nav">Solicitar Análise</a></li>
+        <li><a href="https://app.oscarpes.com.br" class="cta-nav cta-nav-app">Entrar no App</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <article class="article-page">
+    <header class="article-banner">
+      <div class="container">
+        <a href="index.html" class="article-back">← Voltar ao site</a>
+        <div class="article-meta">
+          <span class="article-tag">🗑️ Conta · Account · Cuenta</span>
+          <span class="article-meta-item">📅 01/10/2026</span>
+        </div>
+        <h1 class="article-title">Excluir conta · Delete account · Eliminar cuenta</h1>
+        <p class="article-lead">Como excluir a sua conta do app Oscarpes — How to delete your account — Cómo eliminar tu cuenta.</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="article-body">
+        <div class="legal-resumo" lang="pt-BR">
+          <h2>Português — Excluir a conta do app Oscarpes</h2>
+          <p class="article-p"><strong>Pelo app (mais rápido):</strong></p>
+          <ol class="article-list">
+            <li>Abra o app Oscarpes e entre na sua conta.</li>
+            <li>Toque em <strong>Perfil</strong>.</li>
+            <li>No fim da tela, toque em <strong>Excluir minha conta</strong> e confirme.</li>
+          </ol>
+          <p class="article-p">A conta sai do ar na hora. Os seus dados pessoais (nome, e-mail, telefone, perfil, uso mensal e login) são apagados de vez em até <strong>30 dias</strong>. Se entrar de novo nesse prazo, a exclusão é cancelada. Os registros que pertencem à empresa para a qual você trabalha (talhões, laudos, notas fiscais) ficam com ela, sem o seu nome; documentos fiscais são guardados pelo prazo da lei.</p>
+          <p class="article-p"><strong>Sem acesso ao app?</strong> Mande um e-mail para <a href="mailto:joaocarpes@oscarpes.com.br?subject=Excluir%20minha%20conta%20Oscarpes">joaocarpes@oscarpes.com.br</a> com o assunto "Excluir minha conta", a partir do e-mail cadastrado. Confirmamos em até 15 dias e a exclusão segue o mesmo prazo.</p>
+        </div>
+
+        <div class="legal-resumo" lang="en">
+          <h2>English — Delete your Oscarpes account</h2>
+          <ol class="article-list">
+            <li>Open the Oscarpes app and sign in.</li>
+            <li>Tap <strong>Profile</strong>.</li>
+            <li>At the bottom of the screen, tap <strong>Delete my account</strong> and confirm.</li>
+          </ol>
+          <p class="article-p">The account is disabled immediately. Your personal data (name, e-mail, phone, profile, monthly usage and sign-in) is permanently deleted within <strong>30 days</strong>; signing in again within that period cancels the request. Records that belong to the company you work for (fields, reports, invoices) remain with it, without your name; tax documents are kept for the period required by law.</p>
+          <p class="article-p"><strong>Can't sign in?</strong> E-mail <a href="mailto:joaocarpes@oscarpes.com.br?subject=Delete%20my%20Oscarpes%20account">joaocarpes@oscarpes.com.br</a> from your registered address with the subject "Delete my account". We confirm within 15 days.</p>
+        </div>
+
+        <div class="legal-resumo" lang="es">
+          <h2>Español — Eliminar tu cuenta de Oscarpes</h2>
+          <ol class="article-list">
+            <li>Abre la app Oscarpes e inicia sesión.</li>
+            <li>Toca <strong>Perfil</strong>.</li>
+            <li>Al final de la pantalla, toca <strong>Eliminar mi cuenta</strong> y confirma.</li>
+          </ol>
+          <p class="article-p">La cuenta se desactiva de inmediato. Tus datos personales (nombre, correo, teléfono, perfil, uso mensual e inicio de sesión) se eliminan definitivamente en hasta <strong>30 días</strong>; si vuelves a iniciar sesión dentro de ese plazo, la solicitud se cancela. Los registros que pertenecen a la empresa para la que trabajas (parcelas, informes, facturas) quedan con ella, sin tu nombre; los documentos fiscales se guardan por el plazo legal.</p>
+          <p class="article-p"><strong>¿No puedes iniciar sesión?</strong> Escribe a <a href="mailto:joaocarpes@oscarpes.com.br?subject=Eliminar%20mi%20cuenta%20Oscarpes">joaocarpes@oscarpes.com.br</a> desde el correo registrado con el asunto "Eliminar mi cuenta". Confirmamos en hasta 15 días.</p>
+        </div>
+
+        <p class="article-p">OSCARPES E.A.S. — RUC 80176938-8 — Zanja Pytã, Amambay, Paraguay · <a href="privacidade.html">Privacidade</a> · <a href="privacy.html">Privacy</a> · <a href="privacidad.html">Privacidad</a></p>
+
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="brand"><img src="img/oscarpes-logo.png" alt="Logo Oscarpes"><span class="brand-text"><strong>OSCARPES</strong><small>Agricultura Inteligente</small></span></a><p>Laboratório agronômico do Grupo Oscarpes — análise de solo, consultoria, adubos e tecnologia.</p></div>
+        <div><h5>Soluções</h5><ul><li><a href="analise-solo.html">Análise de Solo</a></li><li><a href="consultoria.html">Consultoria</a></li><li><a href="adubos.html">Adubos Especiais</a></li><li><a href="app.html">App Oscarpes</a></li></ul></div>
+        <div><h5>Empresa</h5><ul><li><a href="sobre.html">Sobre nós</a></li><li><a href="contato.html">Contato</a></li><li><a href="https://wa.me/5566999233434?text=Ol%C3%A1%2C%20vi%20o%20conte%C3%BAdo%20da%20Oscarpes%20sobre%20excluir%20minha%20conta%20e%20quero%20conversar." target="_blank" rel="noopener">WhatsApp</a></li><li><a href="privacidade.html">Política de Privacidade</a></li><li><a href="termos.html">Termos de Uso</a></li></ul></div>
+        <div><h5>Contato</h5><ul><li>Sorriso — Mato Grosso</li><li><a href="mailto:joaocarpes@oscarpes.com.br">joaocarpes@oscarpes.com.br</a></li><li><a href="https://wa.me/5566999233434?text=Ol%C3%A1%2C%20vi%20o%20conte%C3%BAdo%20da%20Oscarpes%20sobre%20excluir%20minha%20conta%20e%20quero%20conversar." target="_blank" rel="noopener">Falar no WhatsApp</a></li></ul><div class="social-links"><a href="https://instagram.com/oscarpes_agricultura" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a href="https://www.youtube.com/channel/UCAtOWKjYQIU1O_fXgjECWbw" target="_blank" rel="noopener" aria-label="YouTube">YT</a><a href="#" aria-label="LinkedIn">in</a></div></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Grupo Oscarpes • Todos os direitos reservados.<br><small>OSCARPES E.A.S. (Paraguay) · RUC 80176938-8 · Zanja Pytã, Amambay</small></span><span><a href="privacidade.html">Privacidade</a> • <a href="termos.html">Termos</a></span><span>Feito com 🌱 em Sorriso/MT</span></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5566999233434?text=Olá%20Oscarpes!" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <script src="js/main.js"></script>
+</body>
+</html>

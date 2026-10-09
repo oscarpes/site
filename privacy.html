@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Oscarpes</title>
+  <meta name="description" content="How the Oscarpes app processes personal data: what is collected, why, where it is stored and how to exercise your rights.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Privacy Policy — Oscarpes">
+  <meta property="og:description" content="How the Oscarpes app processes personal data: what is collected, why, where it is stored and how to exercise your rights.">
+  <meta property="og:image" content="https://www.oscarpes.com.br/img/oscarpes-logo.png">
+  <meta property="og:url" content="https://www.oscarpes.com.br/privacy">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <link rel="canonical" href="https://www.oscarpes.com.br/privacy">
+  <link rel="icon" type="image/png" href="img/oscarpes-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/blog.css">
+
+  <style>
+    /* Blocos exclusivos das páginas legais (Privacidade / Termos).
+       Reaproveitam a paleta da marca definida em css/style.css. */
+    .legal-resumo {
+      background: rgba(162, 167, 42, .12);
+      border: 1px solid rgba(162, 167, 42, .45);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.5rem;
+      margin: 0 0 2rem;
+    }
+    .legal-resumo h2 {
+      font-size: 1.1rem;
+      margin-bottom: .8rem;
+      color: var(--verde-medio);
+    }
+    .legal-resumo ul { padding-left: 1.2rem; margin: 0; }
+    .legal-resumo li { margin-bottom: .5rem; color: var(--cinza); }
+
+    .legal-aviso {
+      background: rgba(249, 163, 34, .12);
+      border: 1px solid rgba(249, 163, 34, .5);
+      border-left: 5px solid var(--laranja);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .legal-aviso h2, .legal-aviso h3 {
+      font-size: 1.05rem;
+      margin-bottom: .6rem;
+      color: var(--marrom);
+    }
+    .legal-aviso ul { padding-left: 1.2rem; margin: .6rem 0 0; }
+    .legal-aviso li { margin-bottom: .5rem; color: var(--cinza); }
+
+    /* Marca visível de dado que ainda não foi preenchido. Preferimos deixar
+       o buraco à vista a publicar informação inventada. */
+    .pendente {
+      display: inline-block;
+      background: rgba(249, 163, 34, .22);
+      border: 1px dashed var(--marrom);
+      border-radius: 6px;
+      padding: .05rem .45rem;
+      font-size: .92em;
+      font-weight: 600;
+      color: var(--marrom);
+      white-space: normal;
+    }
+
+    .legal-selo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem 1.4rem;
+      font-size: .92rem;
+      color: var(--cinza);
+      border-top: 1px solid rgba(60, 76, 3, .15);
+      border-bottom: 1px solid rgba(60, 76, 3, .15);
+      padding: .9rem 0;
+      margin-bottom: 2rem;
+    }
+    .legal-selo strong { color: var(--verde-escuro); }
+
+    /* Tabela rola dentro da própria caixa no celular, em vez de estourar a
+       página. Só a tabela de 4 colunas ganha largura mínima — as de 2 colunas
+       cabem sozinhas e não precisam rolar. */
+    .tabela-rola { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0; }
+    .tabela-rola table { margin: 0; }
+    .tabela-rola.larga table { min-width: 560px; }
+    .tabela-dica { display: none; font-size: .85rem; color: var(--marrom); margin: -1rem 0 1.5rem; }
+    @media (max-width: 700px) { .tabela-dica { display: block; } }
+
+    .legal-indice {
+      background: var(--branco);
+      border: 1px solid rgba(60, 76, 3, .15);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .legal-indice h2 { font-size: 1rem; margin-bottom: .7rem; color: var(--verde-medio); }
+    .legal-indice ol { padding-left: 1.3rem; margin: 0; columns: 2; column-gap: 2rem; }
+    .legal-indice li { margin-bottom: .35rem; font-size: .95rem; }
+    @media (max-width: 600px) {
+      .legal-indice ol { columns: 1; }
+      .legal-resumo, .legal-aviso, .legal-indice { padding: 1.1rem 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="brand"><img src="img/oscarpes-logo.png" alt="Logo Oscarpes"><span class="brand-text"><strong>OSCARPES</strong><small>Agricultura Inteligente</small></span></a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="analise-solo.html">Análise de Solo</a></li>
+        <li><a href="consultoria.html">Consultoria</a></li>
+        <li><a href="adubos.html">Adubos</a></li>
+        <li><a href="app.html">App</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html" class="cta-nav">Solicitar Análise</a></li>
+        <li><a href="https://app.oscarpes.com.br" class="cta-nav cta-nav-app">Entrar no App</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <article class="article-page">
+    <header class="article-banner">
+      <div class="container">
+        <a href="index.html" class="article-back">← Back to site</a>
+        <div class="article-meta">
+          <span class="article-tag">🔒 Legal</span>
+          <span class="article-meta-item">📅 Last updated: 2026-10-01</span>
+        </div>
+        <h1 class="article-title">Privacy Policy</h1>
+        <p class="article-lead">How the Oscarpes app and the oscarpes.com.br website process personal data.</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="article-body">
+        <div class="legal-selo">
+          <span><strong>Effective:</strong> October 1, 2026</span>
+          <span><strong>Version:</strong> 2.0</span>
+          <span><strong>Permanent address:</strong> www.oscarpes.com.br/privacy</span>
+        </div>
+        <p class="article-p" style="font-size:.95rem">🌐 <a href="privacidade.html" hreflang="pt-BR">Ler em português</a> · <a href="privacidad.html" hreflang="es">Leer en español</a> — the Portuguese version is the reference text.</p>
+
+        <div class="legal-resumo">
+          <h2>In short</h2>
+          <ul>
+            <li>The company responsible for the app and its data is <strong>OSCARPES E.A.S.</strong> (Paraguay, RUC 80176938-8).</li>
+            <li>The app stores <strong>grower records</strong> (name, phone and, when provided, tax ID), <strong>farms and fields with GPS coordinates</strong>, sampling points, sample barcodes and soil test results.</li>
+            <li>This data is stored on <strong>servers in Brazil</strong> (Supabase/AWS, São Paulo region) and on the device, because the app works offline in the field.</li>
+            <li><strong>We do not sell data</strong>, show no ads and do not track you across other apps or websites.</li>
+            <li><strong>You can delete your account inside the app:</strong> Profile → <em>Delete my account</em>. Instructions: <a href="excluir-conta.html">oscarpes.com.br/excluir-conta</a>.</li>
+          </ul>
+        </div>
+
+        <h2 class="article-h2" id="who">1. Who we are</h2>
+        <p class="article-p"><strong>Oscarpes</strong> is the soil sampling and agronomic management app of the <strong>Oscarpes Group</strong>, available as a mobile app and on the web at <a href="https://app.oscarpes.com.br">app.oscarpes.com.br</a>. The <strong>data controller</strong> is <strong>OSCARPES E.A.S.</strong> (Empresa por Acciones Simplificada), RUC 80176938-8, Zanja Pytã, Department of Amambay, Paraguay — Calle Milciades Olmedo esquina Ceferina González Ortiz, s/n, barrio Florida (cuenta corriente catastral 00653-29-0032-04-00-00/001). Brazil's LGPD (Law 13,709/2018) also applies to data of people in Brazil and to processing carried out in Brazil.</p>
+
+        <h2 class="article-h2" id="scope">2. Who this policy covers</h2>
+        <ul class="article-list">
+          <li><strong>App users</strong> — people who create an account and sign in (agronomists, field technicians, staff).</li>
+          <li><strong>Registered growers</strong> — farm owners registered in the app by a user, who may never have opened the app themselves.</li>
+          <li><strong>People who contact us</strong> by e-mail or messaging.</li>
+        </ul>
+
+        <h2 class="article-h2" id="data">3. Data we process</h2>
+        <ul class="article-list">
+          <li><strong>Account:</strong> name, e-mail, phone (optional), password (stored only as an irreversible hash by Supabase Auth), organization and role, hectares sampled per month.</li>
+          <li><strong>Growers, farms and fields:</strong> name, tax ID (optional), phone, address, farm name and location, field boundaries (GPS polygon), crop and season.</li>
+          <li><strong>Field work:</strong> precise GPS location of sampling points and of the route walked <strong>while the sampling screen is open</strong> (the app does not use location in the background), sample barcodes, field notes, pest and weed records, rainfall records.</li>
+          <li><strong>Photos and videos:</strong> taken with the camera or chosen from the gallery only when you tap the corresponding button. Field timeline photos, pest monitoring photos and attachments to visit reports are uploaded to our storage; diary and sampling-point photos stay on the device. The app does not record audio.</li>
+          <li><strong>Soil test results</strong>, fertility maps and PDF reports linked to each field.</li>
+          <li><strong>Business records</strong> (restricted modules): invoices, inventory, grain storage and sales, bank statements imported by the company, accounts payable and receivable.</li>
+          <li><strong>Assistant messages:</strong> text typed into the in-app assistant is sent to our server to be answered.</li>
+          <li><strong>Technical data:</strong> IP address recorded by hosting providers, app version and error logs. We do not use advertising IDs, analytics SDKs or crash-reporting SDKs.</li>
+          <li><strong>Payments:</strong> the app collects no card or bank data from users and sells nothing inside the app.</li>
+        </ul>
+
+        <h2 class="article-h2" id="purposes">4. Why we use it</h2>
+        <p class="article-p">To provide the service (sampling grids, GPS-guided sampling, reports, maps, sync and exports), to authenticate users and keep each organization's data separate, to measure usage of the plan, to provide support, to keep the service secure, to meet legal, tax and accounting obligations and, only with aggregated and anonymized data, to improve the product. We never use personal data for targeted advertising.</p>
+
+        <h2 class="article-h2" id="sharing">5. Service providers and international transfers</h2>
+        <div class="tabela-rola larga">
+          <table>
+            <thead><tr><th>Provider</th><th>Purpose</th><th>What it receives</th><th>Location</th></tr></thead>
+            <tbody>
+              <tr><td>Supabase / AWS</td><td>Database, sign-in and file storage</td><td>All synced app data</td><td>São Paulo, Brazil</td></tr>
+              <tr><td>GitHub Pages</td><td>Hosting of the website and web app</td><td>IP and browsing data</td><td>United States</td></tr>
+              <tr><td>Copernicus / Sentinel Hub</td><td>Satellite imagery and NDVI</td><td>The bounding box of the field</td><td>European Union</td></tr>
+              <tr><td>Open-Meteo</td><td>Weather and rainfall</td><td>Approximate latitude and longitude</td><td>European Union</td></tr>
+              <tr><td>Esri / ArcGIS, Google Maps, Apple Maps</td><td>Base maps</td><td>Coordinates of the area on screen</td><td>United States</td></tr>
+              <tr><td>Anthropic, OpenAI</td><td>Automated assistant</td><td>The question text and the query result</td><td>United States</td></tr>
+              <tr><td>Meta / WhatsApp, Z-API</td><td>Delivering reports and messages by WhatsApp, when you choose to send them</td><td>Phone number and message content</td><td>United States / Brazil</td></tr>
+              <tr><td>Expo (EAS Update)</td><td>Delivering app updates</td><td>Technical data (platform, app version)</td><td>United States</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="article-p">We also share data when you ask us to, when required by law or court order, to defend our rights, or in a merger or acquisition with prior notice. <strong>We never sell data</strong> or give one client's field data to a competitor.</p>
+
+        <h2 class="article-h2" id="lab">6. App and laboratory are kept apart</h2>
+        <p class="article-p">Data entered in the app is <strong>not automatically passed to the Oscarpes laboratory</strong>; the lab only receives samples and data when the user chooses to send them. Each organization only sees its own data — enforced in the database (Row Level Security), not just on screen. A small, named list of Oscarpes Group administrators has access for support, maintenance and security.</p>
+
+        <h2 class="article-h2" id="retention">7. Retention</h2>
+        <ul class="article-list">
+          <li>Active account: while the account exists.</li>
+          <li>After an account deletion request: personal data deleted within <strong>30 days</strong>.</li>
+          <li>Records that belong to the client company (fields, reports, invoices) stay with that company, without the deleted user's name.</li>
+          <li>Tax and accounting records: for the period required by law.</li>
+          <li>Technical logs and assistant conversations: 90 days. Backups rotate every 90 days.</li>
+        </ul>
+
+        <h2 class="article-h2" id="security">8. Security</h2>
+        <p class="article-p">All traffic uses HTTPS/TLS; passwords are hashed; data is separated per organization in the database; backups are encrypted; administrative access is restricted to named accounts. If a security incident creates a relevant risk, we will notify the competent authority and the people affected.</p>
+
+        <h2 class="article-h2" id="rights">9. Your rights and account deletion</h2>
+        <p class="article-p">You may request confirmation and access, correction, anonymization, blocking or deletion, portability, information about sharing, withdrawal of consent and review of automated decisions.</p>
+        <p class="article-p"><strong>Delete your account in the app:</strong> Profile → <em>Delete my account</em>. The account is disabled immediately and your personal data is permanently deleted within 30 days; signing in again within that period cancels the request. If you cannot sign in, follow the steps at <a href="excluir-conta.html">oscarpes.com.br/excluir-conta</a>. For any other request, contact us (section 11); we reply within 15 days.</p>
+
+        <h2 class="article-h2" id="children">10. Children and cookies</h2>
+        <p class="article-p">The app is a professional tool not intended for anyone under 18. The app uses device storage only to work offline and keep you signed in; there are no tracking cookies, marketing pixels or advertising SDKs. This website loads Google Fonts and an embedded Google Map on the contact page, which receive your IP address.</p>
+
+        <h2 class="article-h2" id="contact">11. Contact</h2>
+        <ul class="article-list">
+          <li><strong>Controller:</strong> OSCARPES E.A.S., RUC 80176938-8 — Zanja Pytã, Amambay, Paraguay</li>
+          <li><strong>E-mail:</strong> <a href="mailto:joaocarpes@oscarpes.com.br">joaocarpes@oscarpes.com.br</a></li>
+          <li><strong>WhatsApp:</strong> <a href="https://wa.me/5566999233434?text=Hi%2C%20I%20saw%20the%20Oscarpes%20website%20about%20my%20data%20privacy%20and%20would%20like%20to%20talk." target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+        </ul>
+        <p class="article-p">You may also contact your country's data protection authority (in Brazil, the ANPD at <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">gov.br/anpd</a>).</p>
+
+        <h2 class="article-h2" id="changes">12. Changes</h2>
+        <p class="article-p">Relevant changes are announced by e-mail and in the app 30 days in advance. The current version is always at <a href="https://www.oscarpes.com.br/privacy">www.oscarpes.com.br/privacy</a>. See also the <a href="terms.html">Terms of Use</a>.</p>
+        <hr>
+        <p class="article-p"><em>Oscarpes Privacy Policy — version 2.0, October 1, 2026. Controller: OSCARPES E.A.S. Translation of the Portuguese reference text.</em></p>
+
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="brand"><img src="img/oscarpes-logo.png" alt="Logo Oscarpes"><span class="brand-text"><strong>OSCARPES</strong><small>Agricultura Inteligente</small></span></a><p>Laboratório agronômico do Grupo Oscarpes — análise de solo, consultoria, adubos e tecnologia.</p></div>
+        <div><h5>Soluções</h5><ul><li><a href="analise-solo.html">Análise de Solo</a></li><li><a href="consultoria.html">Consultoria</a></li><li><a href="adubos.html">Adubos Especiais</a></li><li><a href="app.html">App Oscarpes</a></li></ul></div>
+        <div><h5>Empresa</h5><ul><li><a href="sobre.html">Sobre nós</a></li><li><a href="contato.html">Contato</a></li><li><a href="https://wa.me/5566999233434?text=Hi%2C%20I%20saw%20the%20Oscarpes%20website%20about%20my%20data%20privacy%20and%20would%20like%20to%20talk." target="_blank" rel="noopener">WhatsApp</a></li><li><a href="privacidade.html">Política de Privacidade</a></li><li><a href="termos.html">Termos de Uso</a></li></ul></div>
+        <div><h5>Contato</h5><ul><li>Sorriso — Mato Grosso</li><li><a href="mailto:joaocarpes@oscarpes.com.br">joaocarpes@oscarpes.com.br</a></li><li><a href="https://wa.me/5566999233434?text=Hi%2C%20I%20saw%20the%20Oscarpes%20website%20about%20my%20data%20privacy%20and%20would%20like%20to%20talk." target="_blank" rel="noopener">Chat on WhatsApp</a></li></ul><div class="social-links"><a href="https://instagram.com/oscarpes_agricultura" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a href="https://www.youtube.com/channel/UCAtOWKjYQIU1O_fXgjECWbw" target="_blank" rel="noopener" aria-label="YouTube">YT</a><a href="#" aria-label="LinkedIn">in</a></div></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Grupo Oscarpes • Todos os direitos reservados.<br><small>OSCARPES E.A.S. (Paraguay) · RUC 80176938-8 · Zanja Pytã, Amambay</small></span><span><a href="privacidade.html">Privacidade</a> • <a href="termos.html">Termos</a></span><span>Feito com 🌱 em Sorriso/MT</span></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5566999233434?text=Olá%20Oscarpes!" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <script src="js/main.js"></script>
+</body>
+</html>
