@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use — Oscarpes</title>
+  <meta name="description" content="Terms of Use of the Oscarpes app.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Terms of Use — Oscarpes">
+  <meta property="og:description" content="Terms of Use of the Oscarpes app.">
+  <meta property="og:image" content="https://www.oscarpes.com.br/img/oscarpes-logo.png">
+  <meta property="og:url" content="https://www.oscarpes.com.br/terms">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <link rel="canonical" href="https://www.oscarpes.com.br/terms">
+  <link rel="icon" type="image/png" href="img/oscarpes-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/blog.css">
+
+  <style>
+    /* Blocos exclusivos das páginas legais (Privacidade / Termos).
+       Reaproveitam a paleta da marca definida em css/style.css. */
+    .legal-resumo {
+      background: rgba(162, 167, 42, .12);
+      border: 1px solid rgba(162, 167, 42, .45);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.5rem;
+      margin: 0 0 2rem;
+    }
+    .legal-resumo h2 {
+      font-size: 1.1rem;
+      margin-bottom: .8rem;
+      color: var(--verde-medio);
+    }
+    .legal-resumo ul { padding-left: 1.2rem; margin: 0; }
+    .legal-resumo li { margin-bottom: .5rem; color: var(--cinza); }
+
+    .legal-aviso {
+      background: rgba(249, 163, 34, .12);
+      border: 1px solid rgba(249, 163, 34, .5);
+      border-left: 5px solid var(--laranja);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .legal-aviso h2, .legal-aviso h3 {
+      font-size: 1.05rem;
+      margin-bottom: .6rem;
+      color: var(--marrom);
+    }
+    .legal-aviso ul { padding-left: 1.2rem; margin: .6rem 0 0; }
+    .legal-aviso li { margin-bottom: .5rem; color: var(--cinza); }
+
+    /* Marca visível de dado que ainda não foi preenchido. Preferimos deixar
+       o buraco à vista a publicar informação inventada. */
+    .pendente {
+      display: inline-block;
+      background: rgba(249, 163, 34, .22);
+      border: 1px dashed var(--marrom);
+      border-radius: 6px;
+      padding: .05rem .45rem;
+      font-size: .92em;
+      font-weight: 600;
+      color: var(--marrom);
+      white-space: normal;
+    }
+
+    .legal-selo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem 1.4rem;
+      font-size: .92rem;
+      color: var(--cinza);
+      border-top: 1px solid rgba(60, 76, 3, .15);
+      border-bottom: 1px solid rgba(60, 76, 3, .15);
+      padding: .9rem 0;
+      margin-bottom: 2rem;
+    }
+    .legal-selo strong { color: var(--verde-escuro); }
+
+    /* Tabela rola dentro da própria caixa no celular, em vez de estourar a
+       página. Só a tabela de 4 colunas ganha largura mínima — as de 2 colunas
+       cabem sozinhas e não precisam rolar. */
+    .tabela-rola { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0; }
+    .tabela-rola table { margin: 0; }
+    .tabela-rola.larga table { min-width: 560px; }
+    .tabela-dica { display: none; font-size: .85rem; color: var(--marrom); margin: -1rem 0 1.5rem; }
+    @media (max-width: 700px) { .tabela-dica { display: block; } }
+
+    .legal-indice {
+      background: var(--branco);
+      border: 1px solid rgba(60, 76, 3, .15);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .legal-indice h2 { font-size: 1rem; margin-bottom: .7rem; color: var(--verde-medio); }
+    .legal-indice ol { padding-left: 1.3rem; margin: 0; columns: 2; column-gap: 2rem; }
+    .legal-indice li { margin-bottom: .35rem; font-size: .95rem; }
+    @media (max-width: 600px) {
+      .legal-indice ol { columns: 1; }
+      .legal-resumo, .legal-aviso, .legal-indice { padding: 1.1rem 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="brand"><img src="img/oscarpes-logo.png" alt="Logo Oscarpes"><span class="brand-text"><strong>OSCARPES</strong><small>Agricultura Inteligente</small></span></a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="analise-solo.html">Análise de Solo</a></li>
+        <li><a href="consultoria.html">Consultoria</a></li>
+        <li><a href="adubos.html">Adubos</a></li>
+        <li><a href="app.html">App</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html" class="cta-nav">Solicitar Análise</a></li>
+        <li><a href="https://app.oscarpes.com.br" class="cta-nav cta-nav-app">Entrar no App</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <article class="article-page">
+    <header class="article-banner">
+      <div class="container">
+        <a href="index.html" class="article-back">← Back to site</a>
+        <div class="article-meta">
+          <span class="article-tag">📄 Legal</span>
+          <span class="article-meta-item">📅 Last updated: 2026-10-01</span>
+        </div>
+        <h1 class="article-title">Terms of Use</h1>
+        <p class="article-lead">The rules for using the Oscarpes app.</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="article-body">
+        <div class="legal-selo">
+          <span><strong>Effective:</strong> October 1, 2026</span>
+          <span><strong>Version:</strong> 2.0</span>
+          <span><strong>Permanent address:</strong> www.oscarpes.com.br/terms</span>
+        </div>
+        <p class="article-p" style="font-size:.95rem">🌐 <a href="termos.html" hreflang="pt-BR">Ler em português</a> · <a href="terminos.html" hreflang="es">Leer en español</a> — the Portuguese version is the reference text.</p>
+
+        <h2 class="article-h2" id="acceptance">1. Acceptance</h2>
+        <p class="article-p">These Terms of Use govern the <strong>Oscarpes</strong> app ("App"), mobile and web (<a href="https://app.oscarpes.com.br">app.oscarpes.com.br</a>), owned by <strong>OSCARPES E.A.S.</strong> (Empresa por Acciones Simplificada), RUC 80176938-8, Zanja Pytã, Department of Amambay, Paraguay ("Oscarpes", "we"), a company of the Oscarpes Group. By creating an account, signing in or using the App you accept these Terms and the <a href="privacy.html">Privacy Policy</a>.</p>
+
+        <h2 class="article-h2" id="service">2. What the App does</h2>
+        <p class="article-p">A field tool for agronomic work: grower, farm and field records with GPS boundaries; automatic sampling grids and GPS navigation to each point; sample barcode scanning; offline work with later sync; fertility reports and maps; field notebook (applications, pests, weeds, diary, rainfall, photo timeline); satellite imagery, NDVI and weather; exports in PDF, KML, GeoJSON, CSV and Excel. Business modules (inventory, grain storage, invoices, finance) are restricted to authorized staff.</p>
+
+        <h2 class="article-h2" id="account">3. Account</h2>
+        <p class="article-p">You must be at least 18 and provide true and current information. You are responsible for your credentials and for everything done with them.</p>
+
+        <h2 class="article-h2" id="plans">4. Plans</h2>
+        <p class="article-p">Use is free up to <strong>500 hectares sampled per calendar month</strong>. Above that, extended plans are arranged directly with our sales team, outside the App. <strong>The App sells nothing inside it</strong>, has no automatic billing and collects no card data. Clients of the Oscarpes laboratory may receive extended use under a separate agreement.</p>
+
+        <h2 class="article-h2" id="data">5. Your data</h2>
+        <p class="article-p">The data you enter — records, fields, boundaries, samples, photos, reports, notes — <strong>remains yours</strong>. You grant us a non-exclusive, free, revocable license to store, process and sync it, generate the reports and exports you request, and use <strong>anonymized, aggregated</strong> data to improve the App. If you register data of other people (growers, staff), you confirm you have a legal basis to do so.</p>
+
+        <h2 class="article-h2" id="use">6. Acceptable use</h2>
+        <p class="article-p">Do not use the App for illegal or fraudulent purposes, try to access other organizations' data, reverse-engineer the App, overload the infrastructure, resell access without written permission, or enter false data. Violations may lead to suspension.</p>
+
+        <h2 class="article-h2" id="liability">7. Availability and liability</h2>
+        <p class="article-p">We work to keep the App available but do not guarantee uninterrupted operation; third-party services (maps, satellite, weather, hosting) may fail. GPS positions and calculated areas have a margin of error. <strong>Agronomic, commercial and financial decisions based on the App are your sole responsibility.</strong> Our total liability is limited to the amount you paid in the 12 months before the event, without prejudice to mandatory consumer rights.</p>
+
+        <h2 class="article-h2" id="ip">8. Intellectual property</h2>
+        <p class="article-p">The App, the Oscarpes brand, logos, design, source code and documentation belong to OSCARPES E.A.S. and the Oscarpes Group companies. Using the App transfers none of these rights.</p>
+
+        <h2 class="article-h2" id="termination">9. Account deletion and termination</h2>
+        <p class="article-p">You can delete your account at any time in the App: Profile → <em>Delete my account</em>. It is disabled immediately and your personal data is deleted within 30 days; signing in again within that period cancels the request. If you cannot sign in, see <a href="excluir-conta.html">oscarpes.com.br/excluir-conta</a>. We may terminate accounts for breach of these Terms, fraud or security risk, with prior notice whenever possible.</p>
+
+        <h2 class="article-h2" id="stores">10. App stores</h2>
+        <p class="article-p">When you download the App from the App Store or Google Play, these Terms are between you and OSCARPES E.A.S. only — not Apple or Google, which are not responsible for the App, its maintenance, support or any claims about it. The store's own terms also apply. Apple and its subsidiaries are third-party beneficiaries of these Terms with respect to use of the App on Apple devices.</p>
+
+        <h2 class="article-h2" id="changes">11. Changes, law and contact</h2>
+        <p class="article-p">Relevant changes are announced 30 days in advance by e-mail and in the App. Governing law and venue follow clause 12 of the Portuguese reference text. Contact: <a href="mailto:joaocarpes@oscarpes.com.br">joaocarpes@oscarpes.com.br</a> · WhatsApp <a href="https://wa.me/5566999233434?text=Hi%2C%20I%20saw%20the%20Oscarpes%20website%20about%20the%20terms%20of%20use%20and%20would%20like%20to%20talk." target="_blank" rel="noopener">Chat on WhatsApp</a>.</p>
+        <hr>
+        <p class="article-p"><em>Oscarpes Terms of Use — version 2.0, October 1, 2026. Owner: OSCARPES E.A.S. Translation of the Portuguese reference text.</em></p>
+
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="brand"><img src="img/oscarpes-logo.png" alt="Logo Oscarpes"><span class="brand-text"><strong>OSCARPES</strong><small>Agricultura Inteligente</small></span></a><p>Laboratório agronômico do Grupo Oscarpes — análise de solo, consultoria, adubos e tecnologia.</p></div>
+        <div><h5>Soluções</h5><ul><li><a href="analise-solo.html">Análise de Solo</a></li><li><a href="consultoria.html">Consultoria</a></li><li><a href="adubos.html">Adubos Especiais</a></li><li><a href="app.html">App Oscarpes</a></li></ul></div>
+        <div><h5>Empresa</h5><ul><li><a href="sobre.html">Sobre nós</a></li><li><a href="contato.html">Contato</a></li><li><a href="https://wa.me/5566999233434?text=Hi%2C%20I%20saw%20the%20Oscarpes%20website%20about%20the%20terms%20of%20use%20and%20would%20like%20to%20talk." target="_blank" rel="noopener">WhatsApp</a></li><li><a href="privacidade.html">Política de Privacidade</a></li><li><a href="termos.html">Termos de Uso</a></li></ul></div>
+        <div><h5>Contato</h5><ul><li>Sorriso — Mato Grosso</li><li><a href="mailto:joaocarpes@oscarpes.com.br">joaocarpes@oscarpes.com.br</a></li><li><a href="https://wa.me/5566999233434?text=Hi%2C%20I%20saw%20the%20Oscarpes%20website%20about%20the%20terms%20of%20use%20and%20would%20like%20to%20talk." target="_blank" rel="noopener">Chat on WhatsApp</a></li></ul><div class="social-links"><a href="https://instagram.com/oscarpes_agricultura" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a href="https://www.youtube.com/channel/UCAtOWKjYQIU1O_fXgjECWbw" target="_blank" rel="noopener" aria-label="YouTube">YT</a><a href="#" aria-label="LinkedIn">in</a></div></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Grupo Oscarpes • Todos os direitos reservados.<br><small>OSCARPES E.A.S. (Paraguay) · RUC 80176938-8 · Zanja Pytã, Amambay</small></span><span><a href="privacidade.html">Privacidade</a> • <a href="termos.html">Termos</a></span><span>Feito com 🌱 em Sorriso/MT</span></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5566999233434?text=Olá%20Oscarpes!" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <script src="js/main.js"></script>
+</body>
+</html>
